@@ -41,16 +41,24 @@ export default {
         Block
     },
     methods: {
-        ...mapActions([
-            'RequestBlockchainSync',
-        ])
+        ...mapMutations(['setUser']),
+        ...mapActions(['RequestBlockchainSync']),
     },
     created: function() {
         if(!this.$store.state.user.nickname) {
-            this.$router.push("/login");
-            
+            this.$http.get("/api/checkUser")
+
+            .then((response) => {
+                this.setUser(response.data);
+
+                if(!this.$store.state.user.nickname) {
+                    this.$router.push("/login");     
+                } else {
+                    this.RequestBlockchainSync(); 
+                }
+            });    
         } else {
-            this.RequestBlockchainSync(); 
+            this.RequestBlockchainSync();
         }
    }
 }

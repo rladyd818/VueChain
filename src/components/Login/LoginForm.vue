@@ -7,7 +7,6 @@ const NormalLoginForm = {
     login: async function (values) {
       try {
         let response = await this.$http.post('/api/login',{user: values});
-        console.log('리스폰스', response.data);
         this.setUser(response.data);
         this.$router.push("/");
       } catch (e) {
@@ -18,7 +17,6 @@ const NormalLoginForm = {
       e.preventDefault()
       this.form.validateFields((err, values) => {
         if (!err) {
-          console.log('Received values of form: ', values);
           this.login(values);
         }
       })

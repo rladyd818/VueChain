@@ -30,8 +30,10 @@ export default {
         click: function() {
             if( this.clickEvent == "RequestAddBlock") {
                 this.RequestAddBlock(this.$refs.AddInput.getData());
+                this.$refs.AddInput.clearData();
             } else {
                 this.$block.createNewBlock(this.$refs.AddInput.getData());
+                this.$refs.AddInput.clearData();
             }
         }
     }

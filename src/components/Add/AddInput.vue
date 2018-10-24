@@ -16,6 +16,9 @@ export default {
   methods: {
     getData: function() {
       return this.data;
+    },
+    clearData: function() {
+      return this.data = '';
     }
   }
 }

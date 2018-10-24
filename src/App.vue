@@ -12,7 +12,7 @@
         <ul>
           <router-link tag="a" to="/login/signup"><li class="regbut">sign Up</li></router-link>
           <li><router-link tag="a" to="/login">{{ nickname ? nickname:"Log in" }}</router-link></li>
-          <li><router-link @click.native="ClearLogin" to="/">{{ nickname ? "Log out" : logout }}</router-link></li>
+          <li><router-link @click.native="setSession" to="/">{{ nickname ? "Log out" : logout }}</router-link></li>
         </ul>
       </div>
     </div>
@@ -38,7 +38,15 @@ export default {
   methods: {
     ...mapMutations(['setUser']),
     ...mapMutations(['ClearLogin']),
+    //clear in server user session
+    setSession: function() {
+      this.$http.post("/api/setSession")
+      .then((response) => {
+        this.setUser(response.data);
+      })
+    },
   },
+  //load to server user session
   created: function () {
     if(!this.$store.state.user.nickname) {
       this.$http.get("/api/checkUser")
