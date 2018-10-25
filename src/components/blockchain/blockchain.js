@@ -24,7 +24,7 @@ let blockchain = [genesisBlock];
 
 const getLastBlock = () => blockchain[blockchain.length - 1];
 
-const getTimestamp = () => new Date().getTime() / 1000;
+const getTimestamp = () => new Date().getTime();
 
 export const getBlockchain = () => blockchain;
 

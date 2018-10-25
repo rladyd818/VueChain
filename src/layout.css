@@ -11,10 +11,16 @@
   }
 
   .nav {
+    background: white;
     display: block;
-    margin-top: 18px;
-    margin-bottom: 18px;
-    height: 60px;
+    margin-top: 1.21%;
+    
+    height: 10%;
+    
+    list-style: none;
+    position: fixed;
+    z-index:999;
+    width: 100%;
 
   }
 
@@ -32,10 +38,11 @@
     display: inline-block;
     font-size: 14px;
     color: #232423;
+    margin-top:1%;
     margin-left:50px;
     float: left;
   }
-  
+
   .navbar {
     display: inline-block;
     float: right;
@@ -51,10 +58,12 @@
   ul {
     list-style: none;
     display: inline-block;
+    margin-left: 10%;
   }
   
   ul li {
     display: inline-block;
+    margin-top: 5.5%;
     margin-left: 40px;
   }
   
@@ -93,7 +102,7 @@
   
   
   .header {
-    padding-top: 100px;
+    padding-top: 13%;
     text-align: center;
     font-size: 40px;
     letter-spacing: 10px;
@@ -111,16 +120,24 @@
   }
 
   .header4 {
-    padding-top: 20px;
+    padding-top: 10%;
     text-align: center;
     font-size: 30px;
     letter-spacing: 10px;
   }
 
   .header5 {
-    padding-top: 20px;
-    padding-left: 400px;
-    padding-right: 400px;
+    padding-top: 2%;
+    padding-left: 35%;
+    padding-right: 35%;
+    font-size: 30px;
+    
+  }
+
+  .header6 {
+    padding-top: 13%;
+    padding-left: 20%;
+    padding-right: 30%;
     font-size: 30px;
     
   }

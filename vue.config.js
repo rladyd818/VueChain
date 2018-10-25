@@ -1,3 +1,3 @@
 module.exports = {
-    outputDir:"../express/public"
+    outputDir:"../ExpressChain/public"
 };

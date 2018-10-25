@@ -2,13 +2,22 @@
     <a-card class="mine is-valid mine-shadow">
         <a-input addonBefore="DATA" v-model="inputData">
             <a-icon slot="prefix" type="file-text" />
-        </a-input>        
+        </a-input>
+        <p></p>        
         <p>hash: {{hash}}</p>
         <p>previousHash: {{previousHash}}</p>
-        <p>timestamp: {{timestamp}}</p>
+        
+        <div>
         <span class="indexsp" style="font-size: 30px">
         BLOCK #{{index}}
         </span>
+        <span class="indexsp1" style="font-size: 15px">
+        {{$moment(timestamp).format('LLL')}}
+        </span>
+        <span class="indexsp2" style="font-size: 15px">
+            aa
+        </span>
+        </div>
     </a-Card>
 </template>
 

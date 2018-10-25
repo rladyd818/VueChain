@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     
-        <div class="header5">
+        <div class="header6">
         <RegisterForm/>
         </div>
     

@@ -7,9 +7,12 @@ import store from './store/index';
 import axios from "axios";
 import * as block from "./components/blockchain/blockchain"
 import "./layout.css";
+import moment from "moment";
+import VueMomentJS from "vue-momentjs";
 
 
 Vue.use(Antd);
+Vue.use(VueMomentJS, moment);
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios;
