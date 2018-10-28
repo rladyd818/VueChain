@@ -2,7 +2,7 @@
   <div id="app">
     <div class="nav">
       <div class="logo">
-        <h1>ChainSmoke</h1>
+        <a href="/"><h1>ChainSmoke</h1></a>
       </div>
       
       <div class="navbar">

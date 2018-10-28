@@ -24,7 +24,7 @@ let blockchain = [genesisBlock];
 
 const getLastBlock = () => blockchain[blockchain.length - 1];
 
-const getTimestamp = () => new Date().getTime();
+const getTimestamp = () => new Date().toString();;
 
 export const getBlockchain = () => blockchain;
 
@@ -86,7 +86,7 @@ const isNewStructureValid = (block) => {
     typeof block.index === "number" &&
     typeof block.hash === "string" &&
     typeof block.previousHash === 'string' &&
-    typeof block.timestamp === "number" &&
+    typeof block.timestamp === "string" &&
     typeof block.data === "string"
   );
 };

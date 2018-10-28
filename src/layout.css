@@ -13,7 +13,7 @@
   .nav {
     background: white;
     display: block;
-    margin-top: 1.21%;
+    margin-top: 1.2%;
     
     height: 10%;
     
@@ -63,7 +63,7 @@
   
   ul li {
     display: inline-block;
-    margin-top: 5.5%;
+    margin-top: 9%;
     margin-left: 40px;
   }
   
@@ -93,7 +93,7 @@
   .main {
     
     clear: both;
-    min-height: 600px;
+    min-height: 700px;
     background-color: #F1F1F1;
     margin-top: -20px;
    
@@ -138,6 +138,13 @@
     padding-top: 13%;
     padding-left: 20%;
     padding-right: 30%;
+    font-size: 30px; 
+  }
+  .headerRegis {
+    padding-top: 2%;
+    padding-left: 20%;
+    padding-right: 35%;
+    padding-bottom: 5%;
     font-size: 30px;
     
   }
@@ -184,6 +191,16 @@
     color: #63AAAD;
     border: 2px solid #63AAAD;
     transition: 0.2s;
+  }
+
+  .butcenter {
+    float: center;
+    color: #232423;
+    margin-left: 40%;
+  }
+
+  .agreeleft {
+    margin-left: 30%;
   }
   
   .second {
@@ -285,6 +302,23 @@
         align-items: center;
     -ms-flex-pack: center;
         justify-content: center;
+  }
+
+  a:link {
+    color: black;
+    text-decoration: none;
+  }
+  a:visited {
+    color: black;
+    text-decoration: none;
+  }
+  a:hover {
+    color: black;  
+    text-decoration: none;
+  }
+  a:active {
+    color: black;
+    text-decoration: none;
   }
   
   

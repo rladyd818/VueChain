@@ -150,7 +150,7 @@ const RegistrationForm = {
             <a-input />
           )}
         </a-form-item>
-       
+       <div class="agreeleft">
         <a-form-item {...{ props: tailFormItemLayout }}>
           {getFieldDecorator('agreement', {
             valuePropName: 'checked',
@@ -158,10 +158,14 @@ const RegistrationForm = {
             <a-checkbox>I have read the <a href=''>agreement</a></a-checkbox>
           )}
         </a-form-item>
-
+        </div>
+        <div class="butcenter">
         <a-form-item {...{ props: tailFormItemLayout }}>
-          <a-button type='primary' htmlType='submit'>Register</a-button>
+          <a-button size='large' htmlType='submit'>
+          Register
+          </a-button>
         </a-form-item>
+        </div>
       </a-form>
     )
   },

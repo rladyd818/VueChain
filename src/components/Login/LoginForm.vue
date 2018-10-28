@@ -52,7 +52,7 @@ const NormalLoginForm = {
             <a-checkbox>Remember me</a-checkbox>
           )}
           <a class='login-form-forgot' href=''>Forgot password</a>
-          <a-button type='primary' htmlType='submit' class='login-form-button'>
+          <a-button htmlType='submit' class='login-form-button'>
             Log in
           </a-button>
           Or <a href='/login/signUp'>register now!</a>

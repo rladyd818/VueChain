@@ -1,7 +1,9 @@
 <template>
   <div class="main">
-    
-        <div class="header6">
+      <div class="header4">  
+        <h1>REGISTER</h1> 
+    </div>
+        <div class="headerRegis">
         <RegisterForm/>
         </div>
     
