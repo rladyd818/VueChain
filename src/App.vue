@@ -12,7 +12,7 @@
         </ul> -->
         <ul>
           <li><router-link tag="a" to="/">Home</router-link></li>
-          <router-link tag="a" to="/login/signup"><li class="regbut">sign Up</li></router-link>
+          <li><router-link tag="a" to="/login/signup">{{ nickname ? "" : "SignUp" }}</router-link></li>
           <li><router-link tag="a" to="/login">{{ nickname ? nickname:"Log in" }}</router-link></li>
           <li><router-link @click.native="setSession" to="/">{{ nickname ? "Log out" : logout }}</router-link></li>
         </ul>
@@ -42,20 +42,24 @@ export default {
     ...mapMutations(['setUser']),
     ...mapMutations(['ClearLogin']),
     //clear in server user session
-    setSession: function() {
-      this.$http.post("/api/setSession")
+    clearSession: function() {
+      this.$http.post("/api/clearSession")
       .then((response) => {
         this.setUser(response.data);
+        this.$cookies.remove('user');
       })
     },
   },
-  //load to server user session
+  //load to server user session 
   created: function () {
-    if(!this.$store.state.user.nickname) {
-      this.$http.get("/api/checkUser")
-      .then((response) => {
+    console.log(this.$cookies.get('user'));
+      if(this.$cookies.get('user') === null) {
+        this.$http.get("/api/checkUser")
+        .then((response) => {
         this.setUser(response.data);
       });
+    } else {
+      this.setUser(this.$cookies.get('user'));
     }
   }
 }
