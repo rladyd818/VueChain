@@ -47,7 +47,6 @@ export default {
     created: function() {
         if(!(this.$cookies.get('user') === null)) {
             this.$http.get("/api/checkUser")
-
             .then((response) => {
                 this.setUser(response.data);
 

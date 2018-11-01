@@ -10,6 +10,10 @@ import "./layout.css";
 import moment from "moment";
 import VueMomentJS from "vue-momentjs";
 import VueCookies from 'vue-cookies';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f0a137d65a3702b796d0444a6c7fa69d29eb178
 
 Vue.use(Antd);
 Vue.use(VueMomentJS, moment);
