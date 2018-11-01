@@ -1,6 +1,22 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+<div class="main">
+      <div class="confirmH">
+        <ConfirmCard/>
+      </div>
+        </div>
 </template>
 <!-- aa212121221212112 -->
+<script>
+
+
+import ConfirmCard from "@/components/Confirm/ConfirmCard.vue";
+
+export default {
+    components: {
+        ConfirmCard
+    }
+}
+
+</script>
+
+

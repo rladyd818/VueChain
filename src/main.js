@@ -9,14 +9,16 @@ import * as block from "./components/blockchain/blockchain"
 import "./layout.css";
 import moment from "moment";
 import VueMomentJS from "vue-momentjs";
-
+import VueCookies from 'vue-cookies';
 
 Vue.use(Antd);
 Vue.use(VueMomentJS, moment);
+Vue.use(VueCookies);
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios;
 Vue.prototype.$block = block;
+Vue.prototype.$cookies = VueCookies;
 
 new Vue({
   router,

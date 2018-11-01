@@ -15,23 +15,15 @@
         {{$moment(timestamp).format('LLL')}}
         </span>
         <span class="indexsp2" style="font-size: 15px">
-            aa
+            <OK/>
         </span>
         </div>
     </a-Card>
 </template>
 
 <script>
-
-export function genesisblock() {
-    return {
-        index: 0,
-        hash: "2C4CEB90344F20CC4C77D626247AED3ED530C1AEE3E6E85AD494498B17414CAC",
-        previousHash:null,
-        timestamp:1520312194926,
-        data:"This is the gen123esis!!"
-    }
-}
+import OK from "@/components/Confirm/OkButton.vue";
+import { mapActions } from "vuex";
 
 export default {
     props: {
@@ -39,11 +31,31 @@ export default {
         hash: String,
         previousHash: String,
         data: String,
-        timestamp:Number
+        timestamp:Number,
+        clickEvent: String
     },
+
+    components: {
+        OK
+    },
+
     data: function () {
         return { 
             inputData: this.data 
+        }
+    },
+    methods: {
+        ...mapActions([
+            'RequestAddBlock'
+        ]),
+        click: function() {
+            if( this.clickEvent == "RequestAddBlock") {
+                this.RequestAddBlock(this.$refs.AddInput.getData());
+                this.$refs.AddInput.clearData();
+            } else {
+                this.$block.createNewBlock(this.$refs.AddInput.getData());
+                this.$refs.AddInput.clearData();
+            }
         }
     }
 }
@@ -53,7 +65,6 @@ export default {
 
 <style scoped>
 @import '../Add/AddCard.css';
-@import './Block.css';
+@import './ConfirmCard.css';
 
 </style>
-

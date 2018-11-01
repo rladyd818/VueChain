@@ -29,19 +29,56 @@ export default {
         ]),
         click: function() {
             if( this.clickEvent == "RequestAddBlock") {
+                //this.RequestAddBlock(this.$refs.AddInput.getData());
+                //this.$refs.AddInput.clearData();
+                if( confirm('agreed?') == true ){
+                    alert("connect Chain");
+                    this.RequestAddBlock(this.$refs.AddInput.getData());
+                    this.$refs.AddInput.clearData();
+                    window.location.reload();
+                }else{
+                    alert("disconnect Chain");
+                }
+            } else {
+                this.$block.createNewBlock(this.$refs.AddInput.getData());
+                this.$refs.AddInput.clearData();
+            }
+        } 
+    }
+}
+
+/* 수정
+ if( this.clickEvent == "RequestAddBlock") {
+                //this.RequestAddBlock(this.$refs.AddInput.getData());
+                //this.$refs.AddInput.clearData();
+                if( confirm('agreed?') == true ){
+                    alert("connect Chain");
+                    this.RequestAddBlock(this.$refs.AddInput.getData());
+                    this.$refs.AddInput.clearData();
+                    window.location.reload();
+                }else{
+                    alert("disconnect Chain");
+                }
+            } else {
+                this.$block.createNewBlock(this.$refs.AddInput.getData());
+                this.$refs.AddInput.clearData();
+            }*/
+
+            /* 기존
+            if( this.clickEvent == "RequestAddBlock") {
+
                 this.RequestAddBlock(this.$refs.AddInput.getData());
                 this.$refs.AddInput.clearData();
             } else {
                 this.$block.createNewBlock(this.$refs.AddInput.getData());
                 this.$refs.AddInput.clearData();
-            }
-        }
-    }
-}
+            }*/
 </script>
 
 <style scoped>
 @import 'AddCard.css';
 
 </style>
+
+
 

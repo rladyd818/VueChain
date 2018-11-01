@@ -45,7 +45,7 @@ export default {
         ...mapActions(['RequestBlockchainSync']),
     },
     created: function() {
-        if(!this.$store.state.user.nickname) {
+        if(!(this.$cookies.get('user') === null)) {
             this.$http.get("/api/checkUser")
 
             .then((response) => {
@@ -58,7 +58,11 @@ export default {
                 }
             });    
         } else {
-            this.RequestBlockchainSync();
+            if(this.$cookies.get('user')){
+                this.RequestBlockchainSync();
+            } else {
+                this.$router.push('/login');
+            }
         }
    }
 }
