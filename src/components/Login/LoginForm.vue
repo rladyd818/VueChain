@@ -8,6 +8,8 @@ const NormalLoginForm = {
       try {
         let response = await this.$http.post('/api/login',{user: values});
         this.setUser(response.data);
+        this.$cookies.set('user',
+        response.data, 30);
         this.$router.push("/");
       } catch (e) {
         alert(e);

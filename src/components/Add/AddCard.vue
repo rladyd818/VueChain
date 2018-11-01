@@ -13,6 +13,7 @@
 // @ is an alias to /src
 import AddInput from "@/components/Add/AddInput.vue";
 import AddButton from "@/components/Add/AddButton.vue";
+import ConfirmCard from "@/components/Confirm/ConfirmCard.vue";
 import { mapActions } from "vuex";
 
 export default {
@@ -21,7 +22,8 @@ export default {
     },
     components: {
         AddInput,
-        AddButton
+        AddButton,
+        ConfirmCard
     },
     methods: {
         ...mapActions([
@@ -31,6 +33,9 @@ export default {
             if( this.clickEvent == "RequestAddBlock") {
                 //this.RequestAddBlock(this.$refs.AddInput.getData());
                 //this.$refs.AddInput.clearData();
+                
+                
+                
                 if( confirm('agreed?') == true ){
                     alert("connect Chain");
                     this.RequestAddBlock(this.$refs.AddInput.getData());
